@@ -1,0 +1,562 @@
+# =========================================================
+#  RANG-SHOP MIT LAUFBAHNEN, CMI-PLACEHOLDER & LUCKPERMS
+#
+# License: GNU General Public License v3.0
+# Copyright (c) 2026 Jörg Stöhrmann / Zeronic76
+#    Version: 1.0.3
+#
+# =========================================================
+
+on load:
+    # ---------------------------------------------------------
+    #  DIE EXAKTE RANG-REIHENFOLGE (Für die Upgrade-Prüfung)
+    # ---------------------------------------------------------
+    delete {rank.order::*}
+    # Anfänger
+    add "default" to {rank.order::*}
+    add "novize" to {rank.order::*}
+    add "lehrling" to {rank.order::*}
+    add "arbeiter" to {rank.order::*}
+    add "geselle" to {rank.order::*}
+    add "handwerker" to {rank.order::*}
+    # Siedler
+    add "bürger" to {rank.order::*}
+    add "siedler" to {rank.order::*}
+    add "bewohner" to {rank.order::*}
+    add "stammgast" to {rank.order::*}
+    add "händler" to {rank.order::*}
+    # Adel
+    add "edelmann" to {rank.order::*}
+    add "ritter" to {rank.order::*}
+    add "baron" to {rank.order::*}
+    add "graf" to {rank.order::*}
+    add "fürst" to {rank.order::*}
+    # Elite
+    add "herzog" to {rank.order::*}
+    add "statthalter" to {rank.order::*}
+    add "vogt" to {rank.order::*}
+    add "gouverneur" to {rank.order::*}
+    add "patriot" to {rank.order::*}
+    # Herrscher
+    add "könig" to {rank.order::*}
+    add "monarch" to {rank.order::*}
+    add "kaiser" to {rank.order::*}
+    add "eroberer" to {rank.order::*}
+    add "titan" to {rank.order::*}
+    # Unsterbliche
+    add "held" to {rank.order::*}
+    add "halbgott" to {rank.order::*}
+    add "gottheit" to {rank.order::*}
+    add "legende" to {rank.order::*}
+    add "mythos" to {rank.order::*}
+
+    # Anfänger Spielzeit
+    set {rank.default.req.playtime} to 0
+    set {rank.novize.req.playtime} to 2
+    set {rank.lehrling.req.playtime} to 4
+    set {rank.arbeiter.req.playtime} to 6
+    set {rank.geselle.req.playtime} to 8
+    set {rank.handwerker.req.playtime} to 12
+
+    # Siedler Spielzeit
+    set {rank.bürger.req.playtime} to 8
+    set {rank.siedler.req.playtime} to 12
+    set {rank.bewohner.req.playtime} to 18
+    set {rank.stammgast.req.playtime} to 27
+    set {rank.händler.req.playtime} to 40.5
+
+    # Adel Spielzeit
+    set {rank.edelmann.req.playtime} to 40.5
+    set {rank.ritter.req.playtime} to 60.75
+    set {rank.baron.req.playtime} to 91.125
+    set {rank.graf.req.playtime} to 136.6875
+    set {rank.fürst.req.playtime} to 205.03125
+
+    # Elite Spielzeit
+    set {rank.herzog.req.playtime} to 205
+    set {rank.statthalter.req.playtime} to 307.5
+    set {rank.vogt.req.playtime} to 461.25
+    set {rank.gouverneur.req.playtime} to 691.875
+    set {rank.patriot.req.playtime} to 1037.8125
+
+    # Herrscher Spielzeit
+    set {rank.könig.req.playtime} to 1038
+    set {rank.monarch.req.playtime} to 1557
+    set {rank.kaiser.req.playtime} to 2335.5
+    set {rank.eroberer.req.playtime} to 3503.25
+    set {rank.titan.req.playtime} to 5254.875
+
+    # Unsterblichen Spielzeit
+    set {rank.held.req.playtime} to 2000
+    set {rank.halbgott.req.playtime} to 3000
+    set {rank.gottheit.req.playtime} to 4500
+    set {rank.legende.req.playtime} to 6750
+    set {rank.mythos.req.playtime} to 10125
+
+    # Strecke
+    set {rank.default.req.distance} to 0
+    set {rank.novize.req.distance} to 0
+    set {rank.lehrling.req.distance} to 0
+    set {rank.arbeiter.req.distance} to 0
+    set {rank.geselle.req.distance} to 0
+    set {rank.handwerker.req.distance} to 0
+
+    set {rank.bürger.req.distance} to 1000
+    set {rank.siedler.req.distance} to 1100
+    set {rank.bewohner.req.distance} to 1210
+    set {rank.stammgast.req.distance} to 1331
+    set {rank.händler.req.distance} to 1464
+
+    set {rank.edelmann.req.distance} to 1464
+    set {rank.ritter.req.distance} to 1756
+    set {rank.baron.req.distance} to 2107
+    set {rank.graf.req.distance} to 2528
+    set {rank.fürst.req.distance} to 3034
+
+    set {rank.herzog.req.distance} to 3034
+    set {rank.statthalter.req.distance} to 3337
+    set {rank.vogt.req.distance} to 3670
+    set {rank.gouverneur.req.distance} to 4037
+    set {rank.patriot.req.distance} to 4441
+
+    set {rank.könig.req.distance} to 4441
+    set {rank.monarch.req.distance} to 5551
+    set {rank.kaiser.req.distance} to 6939
+    set {rank.eroberer.req.distance} to 8674
+    set {rank.titan.req.distance} to 10842
+
+    set {rank.held.req.distance} to 10842
+    set {rank.halbgott.req.distance} to 13552
+    set {rank.gottheit.req.distance} to 16940
+    set {rank.legende.req.distance} to 21175
+    set {rank.mythos.req.distance} to 26469
+
+    # Blöcke
+    set {rank.default.req.blocks} to 0
+    set {rank.novize.req.blocks} to 0
+    set {rank.lehrling.req.blocks} to 0
+    set {rank.arbeiter.req.blocks} to 0
+    set {rank.geselle.req.blocks} to 0
+    set {rank.handwerker.req.blocks} to 0
+
+    set {rank.bürger.req.blocks} to 1000
+    set {rank.siedler.req.blocks} to 1100
+    set {rank.bewohner.req.blocks} to 1210
+    set {rank.stammgast.req.blocks} to 1331
+    set {rank.händler.req.blocks} to 1464
+
+    set {rank.edelmann.req.blocks} to 1464
+    set {rank.ritter.req.blocks} to 1610
+    set {rank.baron.req.blocks} to 1771
+    set {rank.graf.req.blocks} to 1948
+    set {rank.fürst.req.blocks} to 2143
+
+    set {rank.herzog.req.blocks} to 2143
+    set {rank.statthalter.req.blocks} to 2357
+    set {rank.vogt.req.blocks} to 2593
+    set {rank.gouverneur.req.blocks} to 2852
+    set {rank.patriot.req.blocks} to 3137
+
+    set {rank.könig.req.blocks} to 3137
+    set {rank.monarch.req.blocks} to 3921
+    set {rank.kaiser.req.blocks} to 4901
+    set {rank.eroberer.req.blocks} to 6126
+    set {rank.titan.req.blocks} to 7657
+
+    set {rank.held.req.blocks} to 7657
+    set {rank.halbgott.req.blocks} to 9571
+    set {rank.gottheit.req.blocks} to 11963
+    set {rank.legende.req.blocks} to 14954
+    set {rank.mythos.req.blocks} to 18692
+
+    # Preise
+    set {rank.default.price} to 0
+    set {rank.novize.price} to 500
+    set {rank.lehrling.price} to 1000
+    set {rank.arbeiter.price} to 1500
+    set {rank.geselle.price} to 2000
+    set {rank.handwerker.price} to 3000
+
+    set {rank.bürger.price} to 4000
+    set {rank.siedler.price} to 6000
+    set {rank.bewohner.price} to 9000
+    set {rank.stammgast.price} to 13000
+    set {rank.händler.price} to 18000
+
+    set {rank.edelmann.price} to 25000
+    set {rank.ritter.price} to 35000
+    set {rank.baron.price} to 50000
+    set {rank.graf.price} to 70000
+    set {rank.fürst.price} to 100000
+
+    set {rank.herzog.price} to 150000
+    set {rank.statthalter.price} to 220000
+    set {rank.vogt.price} to 300000
+    set {rank.gouverneur.price} to 400000
+    set {rank.patriot.price} to 550000
+
+    set {rank.könig.price} to 750000
+    set {rank.monarch.price} to 1000000
+    set {rank.kaiser.price} to 1400000
+    set {rank.eroberer.price} to 1900000
+    set {rank.titan.price} to 2500000
+
+    set {rank.held.price} to 3000000
+    set {rank.halbgott.price} to 4000000
+    set {rank.gottheit.price} to 5500000
+    set {rank.legende.price} to 7500000
+    set {rank.mythos.price} to 10000000
+
+# ---------------------------------------------------------
+#  FUNKTION: STATS AUS CMI-PLACEHOLDER EINLESEN (Escaped)
+# ---------------------------------------------------------
+function getPlayerStats(p: player) :: objects:
+    set {_rawPlay} to placeholder "%%cmi_user_playtime_hourst%%" of {_p}
+    set {_rawDist} to placeholder "%%cmi_user_stats_travel%%" of {_p}
+    set {_rawBlocks} to placeholder "%%cmi_user_stats_blocksmined%%" of {_p}
+
+    if {_rawPlay} is "" or "<none>":
+        set {_rawPlay} to "0"
+    if {_rawDist} is "" or "<none>":
+        set {_rawDist} to "0m"
+    if {_rawBlocks} is "" or "<none>":
+        set {_rawBlocks} to "0"
+
+    return {_rawPlay} and {_rawDist} and {_rawBlocks}
+
+# ---------------------------------------------------------
+#  HILFSFUNKTION: GUI-ITEM MIT TEXT-ANZEIGE
+# ---------------------------------------------------------
+function rankItem(p: player, group: text, mat: item, display: text) :: item:
+    set {_stats::*} to getPlayerStats({_p})
+    set {_playtimeText} to {_stats::1}
+    set {_distanceText} to {_stats::2}
+    set {_blocksText} to {_stats::3}
+
+    set {_reqPlay} to {rank.%{_group}%.req.playtime}
+    set {_reqDist} to {rank.%{_group}%.req.distance}
+    set {_reqBlocks} to {rank.%{_group}%.req.blocks}
+    set {_price} to {rank.%{_group}%.price}
+
+    set {_item} to {_mat}
+    set name of {_item} to {_display}
+
+    set {_distSuffix} to ""
+    if {_distanceText} does not contain "m":
+        set {_distSuffix} to "m"
+
+    set {_lore::*} to "&7Preis: &e%{_price}%"
+    add "&7" to {_lore::*}
+    add "&fSpielzeit: &e%{_playtimeText}% &7/ &e%{_reqPlay}%" to {_lore::*}
+    add "&fStrecke: &e%{_distanceText}%%{_distSuffix}% &7/ &e%{_reqDist}%m" to {_lore::*}
+    add "&fBlöcke: &e%{_blocksText}% &7/ &e%{_reqBlocks}%" to {_lore::*}
+
+    set lore of {_item} to {_lore::*}
+    return {_item}
+
+# ---------------------------------------------------------
+#  HILFSFUNKTION: NAVIGATIONS-BUTTONS (Zurück / Schließen)
+# ---------------------------------------------------------
+function setNavButtons(gui: inventory):
+    set slot 27 of {_gui} to magenta glazed terracotta named "&d&l« Zurück"
+    set slot 35 of {_gui} to barrier named "&c&l✕ Schließen"
+
+# ---------------------------------------------------------
+#  HAUPTMENÜ: LAUFBAHNEN
+# ---------------------------------------------------------
+command /ranks:
+    trigger:
+        set {_gui} to a new chest inventory with 4 rows named "&6&lRang-Laufbahnen"
+        set slot 10 of {_gui} to leather helmet named "&aAnfänger"
+        set slot 11 of {_gui} to stone axe named "&eSiedler"
+        set slot 12 of {_gui} to golden helmet named "&9Adel"
+        set slot 14 of {_gui} to diamond chestplate named "&bElite"
+        set slot 15 of {_gui} to netherite sword named "&cHerrscher"
+        set slot 16 of {_gui} to dragon head named "&5Unsterblichen"
+        # Auch im Hauptmenü macht ein Close-Button auf der 35 Sinn!
+        set slot 35 of {_gui} to barrier named "&c&l✕ Schließen"
+        open {_gui} to player
+
+on inventory click:
+    name of event-inventory is "&6&lRang-Laufbahnen"
+    cancel event
+    if index of event-slot is 10:
+        execute player command "ranks_anfaenger"
+    else if index of event-slot is 11:
+        execute player command "ranks_siedler"
+    else if index of event-slot is 12:
+        execute player command "ranks_adel"
+    else if index of event-slot is 14:
+        execute player command "ranks_elite"
+    else if index of event-slot is 15:
+        execute player command "ranks_herrscher"
+    else if index of event-slot is 16:
+        execute player command "ranks_unsterblichen"
+    else if index of event-slot is 35:
+        close player's inventory
+
+# ---------------------------------------------------------
+#  UNTERMENÜS
+# ---------------------------------------------------------
+command /ranks_anfaenger:
+    trigger:
+        set {_gui} to a new chest inventory with 4 rows named "&aAnfänger-Ränge"
+        set slot 9 of {_gui} to rankItem(player, "novize", leather chestplate, "&aNovize")
+        set slot 11 of {_gui} to rankItem(player, "lehrling", leather leggings, "&aLehrling")
+        set slot 13 of {_gui} to rankItem(player, "arbeiter", leather boots, "&aArbeiter")
+        set slot 15 of {_gui} to rankItem(player, "geselle", stone pickaxe, "&aGeselle")
+        set slot 17 of {_gui} to rankItem(player, "handwerker", iron pickaxe, "&aHandwerker")
+        setNavButtons({_gui})
+        open {_gui} to player
+
+on inventory click:
+    name of event-inventory is "&aAnfänger-Ränge"
+    cancel event
+    if index of event-slot is 9:
+        execute player command "buyrank novize"
+    else if index of event-slot is 11:
+        execute player command "buyrank lehrling"
+    else if index of event-slot is 13:
+        execute player command "buyrank arbeiter"
+    else if index of event-slot is 15:
+        execute player command "buyrank geselle"
+    else if index of event-slot is 17:
+        execute player command "buyrank handwerker"
+    else if index of event-slot is 27:
+        make player execute command "/ranks"
+    else if index of event-slot is 35:
+        close player's inventory
+
+command /ranks_siedler:
+    trigger:
+        set {_gui} to a new chest inventory with 4 rows named "&eSiedler-Ränge"
+        set slot 9 of {_gui} to rankItem(player, "bürger", oak log, "&eBürger")
+        set slot 11 of {_gui} to rankItem(player, "siedler", oak planks, "&eSiedler")
+        set slot 13 of {_gui} to rankItem(player, "bewohner", red bed, "&eBewohner")
+        set slot 15 of {_gui} to rankItem(player, "stammgast", brewing stand, "&eStammgast")
+        set slot 17 of {_gui} to rankItem(player, "händler", emerald, "&eHändler")
+        setNavButtons({_gui})
+        open {_gui} to player
+
+on inventory click:
+    name of event-inventory is "&eSiedler-Ränge"
+    cancel event
+    if index of event-slot is 9:
+        execute player command "buyrank bürger"
+    else if index of event-slot is 11:
+        execute player command "buyrank siedler"
+    else if index of event-slot is 13:
+        execute player command "buyrank bewohner"
+    else if index of event-slot is 15:
+        execute player command "buyrank stammgast"
+    else if index of event-slot is 17:
+        execute player command "buyrank händler"
+    else if index of event-slot is 27:
+        make player execute command "/ranks"
+    else if index of event-slot is 35:
+        close player's inventory
+
+command /ranks_adel:
+    trigger:
+        set {_gui} to a new chest inventory with 4 rows named "&9Adel-Ränge"
+        set slot 9 of {_gui} to rankItem(player, "edelmann", iron sword, "&9Edelmann")
+        set slot 11 of {_gui} to rankItem(player, "ritter", shield, "&9Ritter")
+        set slot 13 of {_gui} to rankItem(player, "baron", gold ingot, "&9Baron")
+        set slot 15 of {_gui} to rankItem(player, "graf", iron ingot, "&9Graf")
+        set slot 17 of {_gui} to rankItem(player, "fürst", diamond, "&9Fürst")
+        setNavButtons({_gui})
+        open {_gui} to player
+
+on inventory click:
+    name of event-inventory is "&9Adel-Ränge"
+    cancel event
+    if index of event-slot is 9:
+        execute player command "buyrank edelmann"
+    else if index of event-slot is 11:
+        execute player command "buyrank ritter"
+    else if index of event-slot is 13:
+        execute player command "buyrank baron"
+    else if index of event-slot is 15:
+        execute player command "buyrank graf"
+    else if index of event-slot is 17:
+        execute player command "buyrank fürst"
+    else if index of event-slot is 27:
+        make player execute command "/ranks"
+    else if index of event-slot is 35:
+        close player's inventory
+
+command /ranks_elite:
+    trigger:
+        set {_gui} to a new chest inventory with 4 rows named "&bElite-Ränge"
+        set slot 9 of {_gui} to rankItem(player, "herzog", golden chestplate, "&bHerzog")
+        set slot 11 of {_gui} to rankItem(player, "statthalter", map, "&bStatthalter")
+        set slot 13 of {_gui} to rankItem(player, "vogt", crossbow, "&bVogt")
+        set slot 15 of {_gui} to rankItem(player, "gouverneur", paper, "&bGouverneur")
+        set slot 17 of {_gui} to rankItem(player, "patriot", white banner, "&bPatriot")
+        setNavButtons({_gui})
+        open {_gui} to player
+
+on inventory click:
+    name of event-inventory is "&bElite-Ränge"
+    cancel event
+    if index of event-slot is 9:
+        execute player command "buyrank herzog"
+    else if index of event-slot is 11:
+        execute player command "buyrank statthalter"
+    else if index of event-slot is 13:
+        execute player command "buyrank vogt"
+    else if index of event-slot is 15:
+        execute player command "buyrank gouverneur"
+    else if index of event-slot is 17:
+        execute player command "buyrank patriot"
+    else if index of event-slot is 27:
+        make player execute command "/ranks"
+    else if index of event-slot is 35:
+        close player's inventory
+
+command /ranks_herrscher:
+    trigger:
+        set {_gui} to a new chest inventory with 4 rows named "&cHerrscher-Ränge"
+        set slot 9 of {_gui} to rankItem(player, "könig", golden helmet, "&cKönig")
+        set slot 11 of {_gui} to rankItem(player, "monarch", nether star, "&cMonarch")
+        set slot 13 of {_gui} to rankItem(player, "kaiser", end crystal, "&cKaiser")
+        set slot 15 of {_gui} to rankItem(player, "eroberer", trident, "&cEroberer")
+        set slot 17 of {_gui} to rankItem(player, "titan", anvil, "&cTitan")
+        setNavButtons({_gui})
+        open {_gui} to player
+
+on inventory click:
+    name of event-inventory is "&cHerrscher-Ränge"
+    cancel event
+    if index of event-slot is 9:
+        execute player command "buyrank könig"
+    else if index of event-slot is 11:
+        execute player command "buyrank monarch"
+    else if index of event-slot is 13:
+        execute player command "buyrank kaiser"
+    else if index of event-slot is 15:
+        execute player command "buyrank eroberer"
+    else if index of event-slot is 17:
+        execute player command "buyrank titan"
+    else if index of event-slot is 27:
+        make player execute command "/ranks"
+    else if index of event-slot is 35:
+        close player's inventory
+
+command /ranks_unsterblichen:
+    trigger:
+        set {_gui} to a new chest inventory with 4 rows named "&5Unsterblichen-Ränge"
+        set slot 9 of {_gui} to rankItem(player, "held", totem of undying, "&5Held")
+        set slot 11 of {_gui} to rankItem(player, "halbgott", enchanted book, "&5Halbgott")
+        set slot 13 of {_gui} to rankItem(player, "gottheit", beacon, "&5Gottheit")
+        set slot 15 of {_gui} to rankItem(player, "legende", dragon egg, "&5Legende")
+        set slot 17 of {_gui} to rankItem(player, "mythos", netherite block, "&5Mythos")
+        setNavButtons({_gui})
+        open {_gui} to player
+
+on inventory click:
+    name of event-inventory is "&5Unsterblichen-Ränge"
+    cancel event
+    if index of event-slot is 9:
+        execute player command "buyrank held"
+    else if index of event-slot is 11:
+        execute player command "buyrank halbgott"
+    else if index of event-slot is 13:
+        execute player command "buyrank gottheit"
+    else if index of event-slot is 15:
+        execute player command "buyrank legende"
+    else if index of event-slot is 17:
+        execute player command "buyrank mythos"
+    else if index of event-slot is 27:
+        make player execute command "/ranks"
+    else if index of event-slot is 35:
+        close player's inventory
+
+# ---------------------------------------------------------
+#  KAUF-KOMMANDO: /buyrank <gruppe> (Mit strikter Upgrade-Prüfung)
+# ---------------------------------------------------------
+command /buyrank <text>:
+    trigger:
+        set {_group} to arg-1
+
+        # 1. RANG-UPGRADE ÜBERPRÜFUNG
+        # Wenn der Spieler den Rang schon hat, direkt abbrechen
+        if player has permission "group.%{_group}%":
+            send "&cDu besitzt den Rang &e%{_group}% &cbereits oder hast einen höheren Rang!" to player
+            stop
+
+        # Den Index des gewünschten Rangs in der Reihenfolge finden
+        set {_targetIndex} to 0
+        loop {rank.order::*}:
+            if loop-value is {_group}:
+                set {_targetIndex} to loop-index parsed as integer
+                exit loop
+
+        if {_targetIndex} is 0:
+            send "&cDieser Rang existiert nicht im System!" to player
+            stop
+
+        # Den exakten Vorgänger-Rang ermitteln
+        set {_requiredPreviousIndex} to {_targetIndex} - 1
+        set {_requiredPreviousGroup} to {rank.order::%{_requiredPreviousIndex}%}
+
+        # Prüfen, ob der Spieler den Vorgänger-Rang hat (Nutzt LuckPerms group-permission)
+        if player does not have permission "group.%{_requiredPreviousGroup}%":
+            send "&cDu kannst diesen Rang nicht kaufen! Du musst zuerst den Rang &e%{_requiredPreviousGroup}% &cbesitzen." to player
+            stop
+
+        # 2. PREIS- UND STATS-ÜBERPRÜFUNG (Deine bestehende Logik)
+        set {_price} to {rank.%{_group}%.price}
+        if {_price} is not set:
+            set {_price} to 0
+
+        set {_stats::*} to getPlayerStats(player)
+        set {_rawPlay} to uncolored {_stats::1}
+        set {_rawDist} to uncolored {_stats::2}
+        set {_rawBlocks} to uncolored {_stats::3}
+
+        replace all "," with "." in {_rawPlay}
+        replace all "," with "." in {_rawDist}
+        replace all "m" with "" in {_rawDist}
+        replace all " " with "" in {_rawPlay}
+        replace all " " with "" in {_rawDist}
+        replace all " " with "" in {_rawBlocks}
+
+        set {_playtime} to {_rawPlay} parsed as number
+        set {_distance} to {_rawDist} parsed as number
+        set {_blocks} to {_rawBlocks} parsed as number
+
+        if {_playtime} is not set:
+            set {_playtime} to 0
+        if {_distance} is not set:
+            set {_distance} to 0
+        if {_blocks} is not set:
+            set {_blocks} to 0
+
+        set {_reqPlay} to {rank.%{_group}%.req.playtime}
+        set {_reqDist} to {rank.%{_group}%.req.distance}
+        set {_reqBlocks} to {rank.%{_group}%.req.blocks}
+
+        if {_reqPlay} is set:
+            if {_playtime} < {_reqPlay}:
+                send "&cDu benötigst mindestens &e%{_reqPlay}%&c Stunden Spielzeit für &e%{_group}%&c! (Du hast: &e%{_playtime}%&c)"
+                stop
+
+        if {_reqDist} is set:
+            if {_distance} < {_reqDist}:
+                send "&cDu musst mindestens &e%{_reqDist}%&c Meter gelaufen sein für &e%{_group}%&c! (Du bist: &e%{_distance}%m&c)"
+                stop
+
+        if {_reqBlocks} is set:
+            if {_blocks} < {_reqBlocks}:
+                send "&cDu musst mindestens &e%{_reqBlocks}%&c Blöcke abgebaut haben für &e%{_group}%&c! (Du hast: &e%{_blocks}%&c)"
+                stop
+
+        if player's balance < {_price}:
+            send "&cDu hast nicht genug Geld für &e%{_group}%&c! (&7Preis: &e%{_price}%&7)"
+            stop
+
+        # 3. KAUF DURCHFÜHREN
+        remove {_price} from player's balance
+        execute console command "lp user %player% parent set %{_group}%"
+        send "&aDu hast erfolgreich den Rang &e%{_group}% &aerworben!"
